@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forgepad"
+version = "0.1.0"
+description = "Command-driven analysis workbench — bridges user commands to the Forge computation ecosystem."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Eric Wolters", email = "eric.wolters@svend.ai"}]
+dependencies = [
+    "forgestat>=0.1.0",
+    "forgespc>=0.1.0",
+    "forgeviz>=0.1.0",
+]
+
+[project.optional-dependencies]
+full = [
+    "forgedoe>=0.1.0",
+    "forgesiop>=0.1.0",
+    "forgesia>=0.1.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
