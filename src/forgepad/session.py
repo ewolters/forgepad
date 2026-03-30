@@ -25,7 +25,7 @@ class CommandResult:
 
 def _ensure_commands_loaded():
     """Import command modules to trigger @register decorators."""
-    from .commands import data, stats, quality, visualization  # noqa: F401
+    from .commands import data, stats, quality, visualization, regression, advanced, domain  # noqa: F401
 
 
 class Session:
